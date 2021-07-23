@@ -65,9 +65,7 @@ const RedditProvider = ({ children }) => {
     setShouldRefreshSubreddit(true);
   }
 
-  useEffect(() => {
-    fetchPosts();
-  }, [selectedSubreddit, shouldRefreshSubreddit]);
+  useEffect(fetchPosts, [selectedSubreddit, shouldRefreshSubreddit]);
   const context = {
     postsBySubreddit,
     selectedSubreddit,
